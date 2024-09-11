@@ -13,6 +13,7 @@ body {
 
 .container {
     width: 80%;
+    background-color: #f5f5f5;
 }
 
 /* -----------------------section 1 ------------------------- */
@@ -20,11 +21,23 @@ body {
     position: sticky;
     top: 0;
     height: 10rem auto;
-    background-color: aquamarine;
     border-radius: 10px;
+    background: #283048;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #859398, #283048);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #859398, #283048);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow:
+        0.7px 1px 1.3px -3px rgba(0, 0, 0, 0.078),
+        1.8px 2.6px 3.8px -3px rgba(0, 0, 0, 0.093),
+        3.9px 5.5px 9.5px -3px rgba(0, 0, 0, 0.103),
+        8.8px 12.6px 21.2px -3px rgba(0, 0, 0, 0.112),
+        21px 30px 33px -3px rgba(0, 0, 0, 0.12);
 }
 
 .img-div {
@@ -34,12 +47,18 @@ body {
 .pro-img {
     width: 130px;
     height: 130px;
+    object-fit: cover;
     border-radius: 50%;
     margin-left: 100px;
 }
 
 .prof-data {
-    margin-right: 100px;
+    margin-right: 9%;
+}
+
+.prof-data h2,
+h4 {
+    color: #f5f5f5;
 }
 
 /* ------------------section 2 ------------------- */
@@ -47,8 +66,14 @@ body {
 .section2 {
     width: 80%;
 }
+
 .sec2-tit {
     font-size: 30px;
+}
+
+.sec2-des {
+    line-height: 30px;
+    font-size: 20px;
 }
 
 .sec2-content {
@@ -59,8 +84,11 @@ body {
 
 .sec3-content {
     padding: 10px;
+    margin: 20px;
 }
-
+.edu-tab {
+    margin-top: 15px;
+}
 
 table,
 tr,
@@ -69,7 +97,8 @@ th {
     border: 1px solid;
     border-collapse: collapse;
     background-color: #f5f5f5;
-    padding: 10px;
+    padding: 8px;
+    font-size: 16px;
 }
 
 
@@ -83,6 +112,10 @@ th {
     font-size: 28px;
 }
 
+.sec4-para {
+    font-size: 20px;
+    line-height: 30px;
+}
 .compny-name {
     font-size: 18px;
     font-weight: 600;
@@ -93,21 +126,132 @@ th {
 .sec5-content {
     margin: 30px;
 }
-
+.sec5-tit {
+    font-size: 28px;
+}
 .skill-list ul {
     margin-left: 26px;
 }
 
 .skill-list ul li {
+    font-size: 16px;
     list-style: square;
 }
 
+/* -----------------section 6 -------------------- */
+
+.sec6-con {
+    margin: 30px;
+}
+
+.sec6-tit {
+    font-size: 28px;
+}
+
+.project-con {
+    margin: 10px;
+}
+.project-con ul .proj1 {
+    font-size: 16px;
+    list-style: square;
+}
+
+/* ---------------------section 7 ------------------ */
+.section7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+.sec7-tit {
+    font-size: 25px;
+}
+.card {
+    margin-top: 1%;
+    display: flex;
+    height: 40px;
+    width: 220px;
+  }
+  .card svg {
+    position: absolute;
+    display: flex;
+    width: 60%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.25s;
+    z-index: 5;
+    padding: 0.25rem;
+    cursor: pointer;
+  }
+  .card .social-link1,.card .social-link2,.card .social-link3,.card .social-link4,.card .social-link5 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    color: #000000;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.25s;
+    border-radius: 50px;
+  }
+  .card svg {
+    transform: scale(1);
+  }
+  .card .social-link1:hover {
+    background: #f09433;
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    animation: bounce_613 0.4s linear;
+  }
+  .card .social-link2:hover {
+    background-color: #242c34;
+    animation: bounce_613 0.4s linear;
+  }
+  .card .social-link3:hover {
+    background-color: #5865f2;
+    animation: bounce_613 0.4s linear;
+  }
+  .card .social-link4:hover {
+    background-color: #0a66c2;
+    animation: bounce_613 0.4s linear;
+  }
+  .card .social-link5:hover {
+    background-color: #ff8000;
+    animation: bounce_613 0.4s linear;
+  }
+  @keyframes bounce_613 {
+    40% {
+      transform: scale(1.4);
+    }
+  
+    60% {
+      transform: scale(0.8);
+    }
+  
+    80% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
 /* ------------------footer section ---------------- */
 .footer {
-    height: 40px;
-    background-color: aquamarine;
+    height: 30px;
+    background: #283048;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #859398, #283048);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #859398, #283048);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     text-align: center;
-    padding-top: 22px;
+    padding-top: 12px;
 }
 
 .footer i {
@@ -121,34 +265,40 @@ th {
     }
 
     .section1,
-    section2,
-    section3,
-    section4,
-    section5 {
+    .section2,
+    .section3,
+    .section4,
+    .section5 {
         width: 100%;
         margin: 0;
     }
-
+    .sec2-des {
+        line-height: 27px;
+        font-size: 16px;
+    }
     .section1 {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-
-    /* -----------section 3------------ */
-    
-    .section3 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     .pro-img {
         margin: 0;
     }
 
     .prof-data {
-        margin-right: 0;
+        margin-left: 12%;
+    }
+    /* -------------section2 ------------ */
+    .section2 {
+        width: 100%;
+    }
+
+    /* -----------section 3------------ */
+
+    .section3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
