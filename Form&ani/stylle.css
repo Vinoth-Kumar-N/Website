@@ -4,24 +4,12 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    /* animation: 2s myani ease-in; */
+    animation: 1s myani ease-in;
 }
 @keyframes myani {
     0% {
         transform: translateX(-100%) rotate(0deg);
         scale: 10%;
-    }
-    25% {
-        transform: translateX(-50%) rotate(90deg);
-        scale: 60%;
-    }
-    50% {
-        transform: translateX(-20%) rotate(180deg);
-        scale: 80%;
-    }
-    75% {
-        transform: translateX(-10%) rotate(270deg);
-        scale: 90%;
     }
     100% {
         transform: translateX(0%) rotate(360deg);
