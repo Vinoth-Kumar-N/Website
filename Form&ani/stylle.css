@@ -1,0 +1,119 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    /* animation: 2s myani ease-in; */
+}
+@keyframes myani {
+    0% {
+        transform: translateX(-100%) rotate(0deg);
+        scale: 10%;
+    }
+    25% {
+        transform: translateX(-50%) rotate(90deg);
+        scale: 60%;
+    }
+    50% {
+        transform: translateX(-20%) rotate(180deg);
+        scale: 80%;
+    }
+    75% {
+        transform: translateX(-10%) rotate(270deg);
+        scale: 90%;
+    }
+    100% {
+        transform: translateX(0%) rotate(360deg);
+        scale: 100%;
+    }
+}
+.form-head {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 800;
+}
+.form-con {
+    border: 1px solid rgb(184, 154, 151);
+    border-style: groove;
+    box-shadow: 1px 1px 10px 2px rgb(140, 117, 117);
+    border-radius: 22px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.form-con:hover {
+    background-color: rgb(247, 246, 248);
+}
+
+#fm .Field {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    background-color: #ece9e9;
+    margin: 10px 0;
+    padding: 10px 10px;
+}
+#fm .Field input {
+    border: none;
+    background-color: #ece9e9;
+    width: 100%;
+    height: 70px;
+    padding: 60px;
+    font-size: 16px;
+}
+input:focus {
+    outline: none;
+}
+#fm button {
+    width: 170px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 18px;
+    margin-left: 20px;
+    background-color: salmon;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.buttCon #butt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttCon .res {
+    font-style:oblique;
+    font-size: 20px;
+}
+#fm button:hover {
+    background-color: rgb(255, 0, 0);
+}
+@media only screen and (max-width: 475px) {
+    .form-con {
+        width: 70%;
+        margin-right: 20px;
+    }
+    #fm .Field {
+        border: none;
+        border-radius: 10px;
+        background-color: #ece9e9;
+        height: 10%;
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 475px) and (max-width: 768px) {
+    .form-con {
+        width: 60%;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .form-con {
+        width: 50%;
+    }
+}

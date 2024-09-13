@@ -1,128 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Animation</title>
-    <style>
-        
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            width: 100vw;
-            /* animation: 5s myani ease-in; */
-        }
-        @keyframes myani {
-            0% {
-                transform: translate(-100%);
-                scale: 10%;
-            }
-            10% {
-                transform: translate(-50%) rotate(20deg);
-                scale: 50%;
-            }
-            25% {
-                transform: translate(-10%) rotate(90deg);
-                scale: 60%;
-            }
-            35% {
-                transform: translate(0%) rotate(180deg);
-                scale: 70%;
-            }
-            75% {
-                transform: translateY(50%) rotate(270deg);
-                scale: 80%;
-            }
-            85% {
-                transform: translateY(-50%) rotate(360deg);
-                scale: 90%;
-            }
-            100% {
-                transform: translate(100%);
-                scale: 100%;
-            }
-        }
-        .form-head {
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-weight: 800;
-        }
-        .form-con {
-            border: 1px solid rgb(184, 154, 151);
-            border-style: groove;
-            box-shadow: 1px 1px 10px 2px rgb(140, 117, 117);
-            border-radius: 22px;
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .form-con:hover {
-            background-color: rgb(247, 246, 248);
-        }
-        #fm label{
-            font-size: 18px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
-        #fm input {
-            border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
-            background-color: #ece9e9;
-            height: 28px;
-        }
-        input:focus {
-            outline: none;
-        }
-        #fm button {
-            width: 170px;
-            border-radius: 20px;
-            padding: 10px 20px;
-            margin-top: 10px;
-            background-color: salmon;
-            color: white;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-        }
-        #fm button:hover {
-            background-color: rgb(255, 0, 0);
-        }
-    </style>
+    <link rel="stylesheet" href="stylle.css">
 </head>
+
 <body>
     <div class="container">
         <div class="form-con">
             <h2 class="form-head" style="font-size: 35px;">SignUp!</h2>
             <form action="#" id="fm">
-                <label for="name">Username: </label><input type="text" placeholder="Enter your Name" id="name" ><br><br>
-                <label for="email">Email: </label><input type="email" placeholder="Enter your Email id" id="email" style="margin-left: 32px;" ><br><br>
-                <label for="pass">Password: </label><input type="password" placeholder="Enter your Password" id="pass" style="margin-left: 12px;" ><br><br>
-                <button type="submit" onclick="sub()">Register</button>
-                <h3 class="res" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"></h3>
+                <input type="text" class="Field" placeholder="Name" id="name">
+                <input type="email" class="Field" placeholder="Email" id="email">
+                <input type="age" class="Field" placeholder="Age" id="age">
+                <input type="password" class="Field" placeholder="Password" id="pass">
+                <div class="buttCon">
+                    <button type="submit" type="submit" onclick="sub()" id="butt">Register</button>
+                    <h2 class="res"></h2>
+                </div>
             </form>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/e55aa8428a.js" crossorigin="anonymous"></script>
     <script>
-        function sub(){
+        function sub(e) {
+
             var nam = document.getElementById('name').value;
             var em = document.getElementById('email').value;
             var pas = document.getElementById('pass').value;
-            if(nam === ''){
-                document.querySelector('.res').innerHTML = 'Please enter your name!';
+            var age = document.getElementById('age').value;
+            if (nam === '' || em === '' || pas === '' || age === '') {
+                document.querySelector('.res').innerHTML = 'Please enter your All data!';
                 return;
             }
             const data = {
-                username : nam,
-                email : em,
-                password : pas
+                username: nam,
+                email: em,
+                password: pas,
+                usertype: age <= 18 ? 'minor' : 'major'
             }
-            console.log(...data);
-            document.querySelector('.res').innerHTML = 'Hello, '+nam+'! You have successfully registered!'
+            console.log(data);
+            document.querySelector('.res').innerHTML = 'Hello, ' + nam + '! You have successfully registered!';
+            document.getElementById('butt').type = 'disabled';
         }
     </script>
 </body>
