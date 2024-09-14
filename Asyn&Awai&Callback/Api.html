@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Api Practise</title>
+</head>
+
+<body>
+    <script>
+        async function api(reqData) {
+            const url = 'https://api.openweathermap.org/data/2.5/weather'; //weather api url
+            const apiKey = 'f00c38e0279b7bc85480c3fe775d518c'; //weather api key
+            const temp = `${url}?q=${reqData}&appid=${apiKey}&units=metric`;
+            try {
+                const req = await fetch(temp);
+                const res = req.json();
+                // console.table(data);
+                return res;
+            } catch (err) {
+                console.log(err);
+            }
+        }
+        async function APIData(reqData) {
+            const apidata = await api(reqData);
+            console.log(apidata);
+        }
+        APIData('pune');
+    </script>
+</body>
+
+</html>
+
+
+
+
+<!-- // const strData = apidata.map((data) => { 
+    //     console.log(data);         
+    //  })
+    // const filData = apidata.filter((data) => { 
+    //     if(data.name === 'Kelly Marks'){
+    //         console.log(data);
+    //     } 
+    // }) -->

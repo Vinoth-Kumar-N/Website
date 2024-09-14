@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const data = 12000;
+    function success(data){
+        console.log('success:'+data);
+    }
+    function fail(){
+        console.log('Failed');
+    }
+    function error(){
+        console.log('Error');
+    }
+
+    function exec(data, a){
+        if(data){
+            a(data);
+        }
+        else if(data === null){
+            a();
+        }else{
+            a();
+        }
+    }
+
+    function BalanceCheck(){
+        if(data > 0){
+            exec(data, success);
+        }else if(data === 0){
+            exec(null , fail);
+        }else{
+            exec(undefined, error);
+        }
+    }
+    BalanceCheck();
+</script>
+</html>
